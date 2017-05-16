@@ -58,7 +58,15 @@ function validateForm(){
          }
      }
 
-
+     //Valindando mail
+       if (!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email))) {
+           var span = document.createElement("span");
+           var referencia = document.getElementById("input-email");
+           var padre = referencia.parentNode;
+           padre.insertBefore(span, referencia);
+           var texto = document.createTextNode("Debe ingresar un mail válido");
+           span.appendChild(texto);
+           return span;
 
 
 }
