@@ -68,5 +68,17 @@ function validateForm(){
            span.appendChild(texto);
            return span;
 
+    //Validando Contraseña
+    } else if (contrasena == null || contrasena.length <= 6 || contrasena == "password" || contrasena == 123456 || contrasena == 098754 || /^\s+$/.test(contrasena)) {
+       var span = document.createElement("span");
+       var referencia = document.getElementById("input-password");
+       var padre = referencia.parentNode;
+       padre.insertBefore(span, referencia);
+       var texto = document.createTextNode("Debe ingresar una contraseña válida");
+       span.appendChild(texto);
+       return span;
+   }
+
+
 
 }
