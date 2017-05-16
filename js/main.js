@@ -79,6 +79,17 @@ function validateForm(){
        return span;
    }
 
+   //Validando etiqueta select con querySelector que si no encuentra coincidencias retorna el primer elemento  encontrado.
+    if (tipoBici == 0) {
+        var span = document.createElement("span");
+        var referencia = document.querySelector("select");
+        var padre = referencia.parentNode;
+        padre.insertBefore(span, referencia);
+        var texto = document.createTextNode("Debes seleccionar al menos un tipo de bici");
+        span.appendChild(texto);
+        return span;
+    }
 
+  
 
 }
